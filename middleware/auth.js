@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 exports.isAuthenticated = async (req, res, next) => {
 
-    const { token } = req.cookies || req.body;
+    const { token } = req.body;
     if (!token) {
         return res.status(400).json({
             message : "Please login first"
